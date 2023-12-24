@@ -1,14 +1,14 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faX } from "@fortawesome/free-solid-svg-icons"
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { useRouter } from "next/navigation";
 
 const DeleteBlock = ({id}) => {
   const router = useRouter();
 
   const deleteTicket = async () =>{
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`,{
+    const res = await fetch(`api/Tickets/${id}`,{
       method: "DELETE",
     });
     if(res.ok){
@@ -17,7 +17,7 @@ const DeleteBlock = ({id}) => {
   };
   return (
     <>
-        <FontAwesomeIcon onClick={deleteTicket} icon={faX} className=" text-red-400 hover:cursor-pointer hover:text-red-300"/>
+        <FontAwesomeIcon onClick={deleteTicket} icon={faTrashAlt} className=" text-red-400 hover:cursor-pointer hover:text-red-300"/>
     </>
   )
 }
