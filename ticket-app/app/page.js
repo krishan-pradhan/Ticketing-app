@@ -30,7 +30,6 @@ const Dashboard = async () => {
           </div>
         </div>
       ))}
-      <div>home page</div>
     </div>
     </>
   )
