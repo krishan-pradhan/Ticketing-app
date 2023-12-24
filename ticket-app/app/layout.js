@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Ticket App',
-  description: 'Krishan',
+  description: 'Ticket app using next.js 13 tailwind and mongodb-(moongoose)',
 }
 
 export default function RootLayout({ children }) {

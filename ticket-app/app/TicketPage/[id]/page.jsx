@@ -24,7 +24,9 @@ const TicketPage = async ({ params }) => {
   }
   return (
     <>
+    <div className="container mx-auto xl:px-0 px-5 flex justify-center">
       <TicketForm ticket={updateTicketData} />
+    </div>
     </> 
   )
 }

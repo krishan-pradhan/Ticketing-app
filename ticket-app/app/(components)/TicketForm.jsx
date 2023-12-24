@@ -52,55 +52,58 @@ const TicketForm = ({ticket}) => {
                 throw new Error("failed to create ticket");
             }
         }
-        router.refresh();
         router.push("/");
+        router.refresh();
     }
   return (
     <>
-        <div>
-            <form method="post" onSubmit={handleSubmit} action="" >
-            <h3>{EDITMODE ? "Create Your Ticket" : "Update Your Ticket"} </h3>
-                <div>
+        <div className=" lg:w-[800px] bg-slate-700 px-10 py-5 w-full">
+            <form method="post" onSubmit={handleSubmit} action="" className="flex flex-col gap-5 items-start">
+            <h2 className="lg:text-3xl text-2xl font-semibold">{EDITMODE ? "Create Your Ticket" : "Update Your Ticket"} </h2>
+                <div className="flex flex-col w-full gap-2">
                     <label htmlFor="title">Title</label>
-                    <input className=" text-zinc-900" type="text" id="title" name="title" onChange={handleChange} required={true} value={formData.title}/>
+                    <input className=" text-zinc-900 pl-4 py-3 rounded border border-sky-200" type="text" id="title" name="title" onChange={handleChange} required={true} value={formData.title} placeholder="Title"/>
                 </div>
-                <div>
+                <div className="flex flex-col w-full gap-2">
                     <label htmlFor="description">Description</label>
-                    <textarea className=" text-zinc-900" type="text" id="description" name="description" onChange={handleChange} required={true} value={formData.description} rows={5}/>
+                    <textarea className=" text-zinc-900  rounded border border-sky-200" type="text" id="description" name="description" onChange={handleChange} required={true} value={formData.description} rows={5} placeholder=""/>
                 </div>
-                <div>
+                <div className="flex flex-col w-full gap-2">
                     <label htmlFor="category">Category</label>
-                    <select className=" text-zinc-900" name="category" id="category" value={formData.category} onChange={handleChange} required={true}>
+                    <select className=" text-zinc-900 pl-4 py-3 rounded border border-sky-200" name="category" id="category" value={formData.category} onChange={handleChange} required={true}>
                         <option value="Hardware Problem">Hardware Problem</option>
                         <option value="Software Problem">Software Problem</option>
                         <option value="Project">Project</option>
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="priority">1</label>
-                    <input className=" text-zinc-900" type="radio" id="priority-1" name="priority" onChange={handleChange} value={1} checked={formData.priority == 1}/>
+                    <h5>Priority</h5>
+                    <div className="flex gap-2">
+                        <label htmlFor="priority">1</label>
+                        <input className=" text-zinc-900" type="radio" id="priority-1" name="priority" onChange={handleChange} value={1} checked={formData.priority == 1}/>
+                    </div>
+                    <div className="flex gap-2">
+                        <label htmlFor="priority">2</label>
+                        <input type="radio" id="priority-2" name="priority" onChange={handleChange} value={2} checked={formData.priority == 2}/>
+                    </div>
+                    <div className="flex gap-2">
+                        <label htmlFor="priority">3</label>
+                        <input  type="radio" id="priority-2" name="priority" onChange={handleChange} value={3} checked={formData.priority == 3}/>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="priority">2</label>
-                    <input type="radio" id="priority-2" name="priority" onChange={handleChange} value={2} checked={formData.priority == 2}/>
-                </div>
-                <div>
-                    <label htmlFor="priority">3</label>
-                    <input  type="radio" id="priority-2" name="priority" onChange={handleChange} value={3} checked={formData.priority == 3}/>
-                </div>
-                <div>
-                    <label htmlFor="progress">Progress</label>
+                <div className="flex flex-col w-full gap-2">
+                    <label htmlFor="progress">Progress {formData.progress}%</label>
                     <input className=" text-zinc-900" type="range" id="progress" name="progress" value={formData.progress} min="0" max="100" required={true} onChange={handleChange} />
                 </div>
-                <div>
+                <div className="flex flex-col w-full gap-2">
                     <label htmlFor="status">Status</label>
-                    <select className=" text-zinc-900" name="status" id="status" value={formData.status} onChange={handleChange}>
+                    <select className=" text-zinc-900 pl-4 py-3 rounded border border-sky-200" name="status" id="status" value={formData.status} onChange={handleChange}>
                         <option value="not Started">Not Started</option>
                         <option value="Started"> Started</option>
                         <option value="done">Done</option>
                     </select>
                 </div>
-                <input value={EDITMODE ? "Create Ticket" : "Submit Ticket"} type="submit" className=" bg-green-500 p-2 hover:cursor-pointer"/>
+                <input value={EDITMODE ? "Create Ticket" : "Submit Ticket"} type="submit" className=" bg-green-500 p-2 hover:cursor-pointer rounded"/>
             </form>
         </div>
     </>
