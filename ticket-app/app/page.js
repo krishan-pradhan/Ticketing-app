@@ -18,11 +18,11 @@ const Dashboard = async () => {
   ]
   return (
     <>
-    <div className="container mx-auto">
+    <div className="container mx-auto px-5 mt-5 ">
       {tickets && uniqueCategories?.map((uniqueCategory, index) =>(
-        <div key={index} className="mb-4">
-          <h2>{uniqueCategory}</h2>
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+        <div key={index} className="lg:mb-8 mb-4 lg:pb-8 pb-4 border-b border-b-slate-700">
+          <h2 className="lg:text-3xl text-2xl">{uniqueCategory}</h2>
+          <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
             {tickets.filter((ticket) => ticket.category === uniqueCategory ).map((filteredTicked, itemIndex) =>(
               <TicketCard id={itemIndex} key={itemIndex} ticket={filteredTicked} />
             ))}

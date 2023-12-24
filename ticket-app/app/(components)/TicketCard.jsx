@@ -22,7 +22,7 @@ const TicketCard = ({ticket}) => {
   return (
     <>
       <div className="">
-        <div className="mx-auto flex flex-col shadow-lg p-3 rounded-sm m-2 gap-5 bg-slate-700">
+        <div className="mx-auto flex flex-col border border-slate-700 hover:shadow-xl hover:scale-105 duration-300 ease rounded gap-5 h-full py-10 px-5">
           <div className=" flex justify-between items-center">
             <PriorityBlock priority={ticket.priority}/> 
             <div>
@@ -30,8 +30,7 @@ const TicketCard = ({ticket}) => {
             </div> 
           </div>
            <Link href={`http://localhost:3000/TicketPage/${ticket._id}`} title="Click To edit">
-            <h4 className=" lg:text-2xl text-sm">{ticket.title}</h4>
-            <hr className="h-px border-0 bg-white" />
+            <h4 className=" lg:text-2xl text-sm border-b border-slate-400 mb-2">{ticket.title}</h4>
             <p>{ticket.description}</p>
             <div className="flex items-center justify-between">
               <div className=" flex flex-col ">

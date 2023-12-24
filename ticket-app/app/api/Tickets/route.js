@@ -1,12 +1,12 @@
 import { error } from "console";
 import Ticket from "@/app/(models)/Tickets";
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server"; 
     
 export async function POST(req){
     console.log("post ran")
     try{
         const body = await req.json();
-        const ticketData = body.formData
+        const ticketData = body.formData;
         await Ticket.create(ticketData)
         return NextResponse.json({message: "Ticket Created"}, { status: 201})
     }
