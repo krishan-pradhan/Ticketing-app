@@ -57,7 +57,7 @@ const TicketForm = ({ticket}) => {
     }
   return (
     <>
-        <div className=" lg:w-[800px] bg-slate-200 px-10 py-5 w-full">
+        <div className=" lg:w-[800px] bg-slate-200 px-10 py-5 w-full rounded">
             <form method="post" onSubmit={handleSubmit} action="" className="flex flex-col gap-5 items-start">
             <h2 className="lg:text-3xl text-2xl font-semibold ">{EDITMODE ? "Update Your Ticket" : "Create Your Ticket"  } </h2>
                 <div className="flex flex-col w-full gap-2">

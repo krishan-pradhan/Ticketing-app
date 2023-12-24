@@ -29,7 +29,7 @@ const TicketCard = ({ticket}) => {
               <DeleteBlock id={ticket._id}/>
             </div> 
           </div>
-           <Link href={`http://localhost:3000/TicketPage/${ticket._id}`} title="Click To edit">
+           <Link href={`http://localhost:3000/TicketPage/${ticket._id}`} title="Click To edit" className="flex flex-col gap-3">
             <h4 className=" lg:text-2xl text-sm border-b border-slate-400 mb-2">{ticket.title}</h4>
             <p>{ticket.description}</p>
             <div className="flex items-center justify-between">
