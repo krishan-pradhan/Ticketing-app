@@ -20,7 +20,7 @@ const Dashboard = async () => {
   return (
     <>
     <div className="container mx-auto px-5 mt-5 ">
-      {/* {tickets && uniqueCategories?.map((uniqueCategory, index) =>(
+      {tickets && uniqueCategories?.map((uniqueCategory, index) =>(
         <div key={index} className="lg:mb-8 mb-4 lg:pb-8 pb-4 border-b border-b-slate-700">
           <h2 className="lg:text-3xl text-2xl mb-2">{uniqueCategory}</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -29,7 +29,7 @@ const Dashboard = async () => {
             ))}
           </div>
         </div>
-      ))} */}
+      ))}
       <div>home page</div>
     </div>
     </>
